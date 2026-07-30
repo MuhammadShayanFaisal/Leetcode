@@ -1,1 +1,8 @@
 select * from City where City.population>100000 and City.CountryCode='USA';
+select Name from City where City.population>120000 and City.CountryCode='USA';
+select * from City;
+select * from City where City.ID=1661;
+select * from City where City.CountryCode='JPN';
+select Name from City where City.CountryCode='JPN';
+SELECT City,State from Station;
+SELECT Distinct City from Station where Station.ID%2=0;
