@@ -6,3 +6,5 @@ select * from City where City.CountryCode='JPN';
 select Name from City where City.CountryCode='JPN';
 SELECT City,State from Station;
 SELECT Distinct City from Station where Station.ID%2=0;
+
+ select count(City)- count(Distinct City)from Station ; 
