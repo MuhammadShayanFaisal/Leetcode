@@ -8,3 +8,5 @@ SELECT City,State from Station;
 SELECT Distinct City from Station where Station.ID%2=0;
 
  select count(City)- count(Distinct City)from Station ; 
+ select City,Length(City) from Station ORDER by Length(City) Desc,City ASC limit 1;
+select City,Length(City) from Station ORDER by Length(City) asc,City ASC limit 1;
