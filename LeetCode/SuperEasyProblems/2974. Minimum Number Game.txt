@@ -1,0 +1,47 @@
+class Solution {
+public:
+    int partition(vector<int>& a, int start, int end)  
+    {  
+        int pivot = a[end]; // Pivot is the last element
+        int i = start - 1;  // Index of the smaller element
+
+        for(int j = start; j < end; j++) {  
+            if (a[j] <= pivot) {  
+                i++;  
+            // Swap a[i] and a[j]
+                int t = a[i];  
+                a[i] = a[j];  
+                a[j] = t;  
+            }  
+        }  
+    // Swap a[i + 1] with pivot (a[end])
+        int t = a[i + 1];  
+        a[i + 1] = a[end];  
+        a[end] = t;  
+
+        return i + 1;  // Return the partition index
+    }
+
+  
+/* function to implement quick sort */  
+    void quick(vector<int>& a, int start, int end) /* a[] = array to be sorted, start = Starting index, end = Ending index */  
+    {  
+        if (start < end)  
+        {  
+            int p = partition(a, start, end); //p is the partitioning index  
+            quick(a, start, p - 1);  
+            quick(a, p + 1, end);  
+        }  
+    }
+    vector<int> numberGame(vector<int>& nums) {
+        quick(nums, 0, nums.size() - 1);
+        int x=0,y=0;
+        for(int i=0;i<nums.size();i+=2){
+            x=nums[i];
+            y=nums[i+1];
+            nums[i]=y;
+            nums[i+1]=x;
+        }
+        return nums;  
+    }
+};
