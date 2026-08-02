@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool checkIfPangram(string sentence) {
+        bool alphabets[26]={false};
+        if (sentence.size()<26)
+        return false;
+        else{
+            int num;
+            for (int i=0;i<sentence.size();i++){
+                num=sentence[i]-'a';
+                alphabets[num]=true;
+            }
+            for (int i=0;i<26;i++){
+                if (alphabets[i]==false)
+                return false;
+            }
+        }
+        return true;
+    }
+};
