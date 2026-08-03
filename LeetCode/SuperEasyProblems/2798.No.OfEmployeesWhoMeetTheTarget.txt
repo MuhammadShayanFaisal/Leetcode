@@ -9,3 +9,11 @@ public:
         return e;
     }
 };
+
+class Solution(object):
+    def numberOfEmployeesWhoMetTarget(self, hours, target):
+        e=0
+        for i in hours:
+            if i>=target:
+                e=e+1
+        return e
