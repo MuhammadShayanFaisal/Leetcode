@@ -1,0 +1,14 @@
+class Solution(object):
+    def differenceOfSum(self, nums):
+        e_Sum=0
+        d_Sum=0
+        for i in nums:
+            e_Sum=e_Sum+i
+            if i<9 :
+                d_Sum=d_Sum+i
+            else:
+                num=len(str(abs(i)))
+                for j in range(num):
+                    d_Sum=d_Sum+i%10
+                    i=i/10
+        return abs(e_Sum-d_Sum)
