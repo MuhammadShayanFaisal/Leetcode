@@ -5,3 +5,4 @@ class Solution(object):
           if words[i].find(x)!=-1 :
             array.append(i)
         return array
+
