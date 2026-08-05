@@ -11,3 +11,17 @@ public:
         return product-sum;
     }
 };
+
+
+class Solution(object):
+    def subtractProductAndSum(self, n):
+        sums=0
+        product=1
+        num=0
+        while(n>0):
+            num=n%10
+            sums=sums+num
+            product=product*num
+            n=n/10
+        return product-sums
+        
