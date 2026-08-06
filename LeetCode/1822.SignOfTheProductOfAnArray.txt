@@ -1,0 +1,39 @@
+class Solution {
+public:
+    int signFunc(int product){
+        if (product>0)
+        return 1;
+        return -1;
+    }
+    int arraySign(vector<int>& nums) {
+        int product=1;
+        for(int i=0;i<nums.size();i++){
+            if (nums[i]==0)
+            return 0;
+            else if (nums[i]>0)
+            nums[i]=1;
+            else
+            nums[i]=-1;
+            product*=nums[i];
+        }
+        return signFunc(product);
+    }
+};
+
+
+class Solution(object):
+    def signFunc(self,product):
+        if product>0:
+            return 1
+        return -1
+    def arraySign(self, nums):
+        product=1
+        for i in range(len(nums)):
+            if nums[i]==0:
+                return 0
+            elif nums[i]>0:
+                nums[i]=1
+            else:
+                nums[i]=-1
+            product=product*nums[i]
+        return self.signFunc(product)
