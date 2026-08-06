@@ -14,3 +14,14 @@ public:
         return amount[i-1];
     }
 };
+
+class Solution(object):
+    def maximumWealth(self, accounts):
+        amount=[]
+        for i in range(len(accounts)):
+            amount.append(0)
+            for j in range(len(accounts[i])):
+                amount[i]=amount[i]+accounts[i][j]
+            if (i>0 and amount[i-1]>amount[i]):
+                amount[i]=amount[i-1]
+        return amount[i-1]
