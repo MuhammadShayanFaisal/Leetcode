@@ -27,3 +27,28 @@ public:
         return num1;
     }
 };
+
+
+
+class Solution(object):
+    def calPoints(self, operations):
+        array=[]
+        for i in range(len(operations)):
+            if operations[i]=='C':
+                array.pop()
+            elif operations[i]=='D':
+                num=array.pop()
+                array.append(num)
+                array.append(2*num)
+            elif operations[i]=='+':
+                num1=array.pop()
+                num2=array.pop()
+                array.append(num2)
+                array.append(num1)
+                array.append(num1+num2)
+            else:
+                array.append(int(operations[i]))
+        num=0
+        for i in array:
+            num=num+i
+        return num
