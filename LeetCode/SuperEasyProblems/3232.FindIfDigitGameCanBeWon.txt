@@ -1,0 +1,30 @@
+class Solution {
+public:
+    bool canAliceWin(vector<int>& nums) {
+        int sumsingle=0,sumdouble=0;
+        for (int i=0;i<nums.size();i++){
+            if (nums[i]<10)
+            sumsingle+=nums[i];
+            else
+            sumdouble+=nums[i];
+        }
+        if (sumsingle!=sumdouble)
+        return true;
+        return false;
+    }
+};
+
+
+class Solution(object):
+    def canAliceWin(self, nums):
+        sumsingle=0
+        sumdouble=0
+        for i in nums:
+            if (i<10):
+                sumsingle+=i
+            else:
+                sumdouble+=i
+        if (sumsingle!=sumdouble):
+            return True
+        return False
+
