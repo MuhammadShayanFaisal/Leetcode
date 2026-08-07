@@ -1,0 +1,34 @@
+class Solution {
+public:
+    int mostWordsFound(vector<string>& sentences) {
+        int spaces=1,compare=1;
+        for (int i=0;i<sentences.size();i++){
+            spaces=1;
+            for (int j=0;j<sentences[i].size();j++){
+                if (sentences[i][j]==' ')
+                spaces++;
+            }
+            if (compare<spaces)
+            compare=spaces;
+        }
+        return compare;
+    }
+};
+
+class Solution(object):
+    def mostWordsFound(self, sentences):
+        spaces=1
+        compare=1
+        for i in sentences:
+            spaces=1
+            j=0
+            while(j<len(i)): 
+                if i.find(" ",j)!=-1:
+                    spaces=spaces+1
+                    j=i.find(" ",j)+1
+                else:
+                    j=len(i)
+            if (compare<spaces):
+                compare=spaces
+        return compare
+        
