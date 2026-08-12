@@ -1,0 +1,16 @@
+class Solution(object):
+    def reverse(self, x):
+        if (x<0):
+            text=str(x)
+            text='-'+text[len(text)-1:0:-1]
+            x=int(text)
+            if x<-(2**31):
+                return 0
+            return x
+        else:
+            text=str(x)
+            text=text[::-1] 
+            x=int(text)
+            if x>2**31:
+                return 0
+            return x
