@@ -1,0 +1,21 @@
+class Solution(object):
+    def isPowerOfFour(self, n):
+        if n<1:
+            return False
+        result=float(math.log(n,4))
+        if result-int(result)==0:
+            return True
+        return False
+
+
+class Solution {
+public:
+    bool isPowerOfFour(int n) {
+        if (n<1)
+        return false;
+        float result=log2(n)/2.0;
+        if (result-int(result)==0)
+        return true;
+        return false;
+    }
+};
